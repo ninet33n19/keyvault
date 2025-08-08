@@ -15,8 +15,8 @@ pub fn run() {
             Ok(())
         })
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![greet])
         .invoke_handler(tauri::generate_handler![
+            greet,
             command::add_credential,
             command::search_credentials,
             command::get_single_credential,
